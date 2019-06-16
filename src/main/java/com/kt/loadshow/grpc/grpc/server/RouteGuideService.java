@@ -34,6 +34,7 @@ public class RouteGuideService extends RouteGuideGrpc.RouteGuideImplBase {
         IntStream.range(0,10).forEach(
                 idx -> {
                     Feature feature = getFeature(idx, request.getLo());
+                    logger.info("idx : {}", idx);
                     responseObserver.onNext(feature);
                 }
         );
